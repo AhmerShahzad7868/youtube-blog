@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>youtube blog</title>
+  <%- include('./partials/head') %>
+</head>
+
+<body>
+  <%- include('./partials/nav') %>
+
+  <div class="container mt-4 mb-2 ">
+    <div class="row row-cols-4">
+      <% blogs.forEach(blog=> { %>
+        <div class="card cols">
+          <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= blog.title %>
+            </h5>
+            <a href=" /blog/<%= blog._id  %>  " class="btn btn-primary">view</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <%- include('./partials/scriptes') %>
+
+</body>
+
+</html>
+
+
+
+<!-- const token = req.cookies["token"]; // read JWT token from cookie
+const userPayload = validateToken(token); // decode token
+req.user = userPayload; // 🔥 now you have req.user for every request
+ -->
